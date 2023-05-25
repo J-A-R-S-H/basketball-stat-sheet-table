@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basketball Stats</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+    <h1>Basketball Stats</h1>
+
+    <div class="container">
+        <table id="stats-table">
+            <thead>
+                <tr>
+                    <th>Player Name</th>
+                    <th class="sortable" data-stat="points">Points</th>
+                    <th class="sortable" data-stat="assists">Assists</th>
+                    <th class="sortable" data-stat="steals">Steals</th>
+                    <th class="sortable" data-stat="fg">Shot attempts</th>
+                    <th class="sortable" data-stat="twoPm">2PM</th>
+                    <th class="sortable" data-stat="threePm">3PM</th>
+                    <th class="sortable" data-stat="game1">Game 1</th>
+                    <th class="sortable" data-stat="game2">Game 2</th>
+                    <th class="sortable" data-stat="game3">Game 3</th>
+                    <th class="sortable" data-stat="shotPercentage">Shot Percentage</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Player rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
