@@ -1,31 +1,28 @@
 let playerData = [
-    { name: "Samuel", points: 4, assists: 6, steals: 3, fg: 0, twoPm: 4, threePm: 3, game1: 0, game2: 0, game3: 4, shotPercentage: 0 },
-    { name: "Andrew", points: 18, assists: 4, steals: 2, fg: 0, twoPm: 3, threePm: 3, game1: 9, game2: 6, game3: 3, shotPercentage: 0 },
-    { name: "Linus", points: 8, assists: 3, steals: 1, fg: 0, twoPm: 2, threePm: 2, game1: 2, game2: 3, game3: 3, shotPercentage: 0 },
-    { name: "Kyle", points: 1, assists: 5, steals: 2, fg: 0, twoPm: 3, threePm: 2, game1: 1, game2: 1, game3: 1, shotPercentage: 0 },
-    { name: "Ben", points: 12, assists: 2, steals: 1, fg: 2, twoPm: 1, threePm: 2, game1: 3, game2: 3, game3: 6, shotPercentage: 0 },
-    { name: "Vince", points: 9, assists: 3, steals: 2, fg: 1, twoPm: 2, threePm: 2, game1: 3, game2: 5, game3: 1, shotPercentage: 0 },
-    { name: "Lance", points: 5, assists: 1, steals: 1, fg: 0, twoPm: 2, threePm: 1, game1: 1, game2: 3, game3: 1, shotPercentage: 0 },
-    { name: "Martino", points: 2, assists: 4, steals: 2, fg: 0, twoPm: 4, threePm: 1, game1: 2, game2: 0, game3: 0, shotPercentage: 0 }
+    { name: "Samuel", points: 4, assists: 5, steals: 1, fg: 43, twoPm: 4, threePm: 0, game1: 0, game2: 0, game3: 4, shotPercentage: 0.093 },
+    { name: "Andrew", points: 18, assists: 3, steals: 3, fg: 52, twoPm: 16, threePm: 1, game1: 9, game2: 6, game3: 3, shotPercentage: 0.307 },
+    { name: "Linus", points: 8, assists: 2, steals: 3, fg: 31, twoPm: 8, threePm: 0, game1: 2, game2: 3, game3: 3, shotPercentage: 0.258 },
+    { name: "Kyle", points: 1, assists: 4, steals: 3, fg: 8, twoPm: 1, threePm: 0, game1: 1, game2: 1, game3: 1, shotPercentage: 0.125 },
+    { name: "Ben", points: 12, assists: 1, steals: 1, fg: 48, twoPm: 1, threePm: 1, game1: 3, game2: 3, game3: 6, shotPercentage: 0.208 },
+    { name: "Vince", points: 9, assists: 3, steals: 1, fg: 1, twoPm: 2, threePm: 1, game1: 3, game2: 5, game3: 1, shotPercentage: 0.166 },
+    { name: "Lance", points: 5, assists: 4, steals: 1, fg: 24, twoPm: 2, threePm: 0, game1: 1, game2: 3, game3: 1, shotPercentage: 0.208 },
+    { name: "Martino", points: 2, assists: 1, steals: 0, fg: 13, twoPm: 4, threePm: 0, game1: 2, game2: 0, game3: 0, shotPercentage: 0.153 }
 ];
 
 let playerColors = new Map(); // Store player colors separately
 
-// Function to populate the table with player data
 function populateTable() {
     const tableBody = document.getElementById("table-body");
-    tableBody.innerHTML = ""; // Clear the table body
+    tableBody.innerHTML = "";
 
     // Iterate through the player data and populate the table
     playerData.forEach((player, index) => {
         const row = document.createElement("tr");
 
-        // Check if player already has a color assigned
         const color = playerColors.get(player.name);
         if (color) {
             row.className = color;
         } else {
-            // Assign appropriate class based on the player's name
             row.className = index < 4 ? "team-1" : "team-2";
             // Store the assigned color for the player
             playerColors.set(player.name, row.className);
@@ -79,10 +76,8 @@ function updateTable() {
         tableBody.appendChild(row);
     });
 }
-
-// Add event listeners to the sortable columns
 const sortableColumns = document.getElementsByClassName("sortable");
-Array.from(sortableColumns).forEach(column => {
+Array.from(sortableColumns).forEach((column) => {
     column.addEventListener("click", () => {
         const stat = column.getAttribute("data-stat");
         const currentOrder = column.getAttribute("data-order");
@@ -90,15 +85,28 @@ Array.from(sortableColumns).forEach(column => {
         sortByStat(stat, currentOrder);
 
         // Toggle the sorting order
-        column.setAttribute("data-order", currentOrder === "asc" ? "desc" : "asc");
+        const newOrder = currentOrder === "asc" ? "desc" : "asc";
+        column.setAttribute("data-order", newOrder);
+
+        // Reset arrow symbols for all columns
+        Array.from(sortableColumns).forEach((col) => {
+            col.classList.remove("sort-asc", "sort-desc");
+        });
+
+        // Add arrow symbol for the clicked column
+        column.classList.add(newOrder === "asc" ? "sort-asc" : "sort-desc");
     });
 });
 
-// Function to sort player data by a specific stat
 function sortByStat(stat, order) {
-    playerData.sort((a, b) => (order === "asc" ? a[stat] - b[stat] : b[stat] - a[stat]));
+    playerData.sort((a, b) => {
+        if (order === "asc") {
+            return a[stat] - b[stat];
+        } else {
+            return b[stat] - a[stat];
+        }
+    });
     updateTable();
 }
 
-// Initially populate the table
 populateTable();
