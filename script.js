@@ -2,10 +2,10 @@ let playerData = [
     { name: "Samuel", points: 4, assists: 5, steals: 1, fg: 43, twoPm: 4, threePm: 0, game1: 0, game2: 0, game3: 4, shotPercentage: 0.093 },
     { name: "Andrew", points: 18, assists: 3, steals: 3, fg: 52, twoPm: 15, threePm: 2, game1: 9, game2: 6, game3: 3, shotPercentage: 0.307 },
     { name: "Linus", points: 8, assists: 2, steals: 3, fg: 31, twoPm: 8, threePm: 0, game1: 2, game2: 3, game3: 3, shotPercentage: 0.258 },
-    { name: "Kyle", points: 1, assists: 4, steals: 3, fg: 8, twoPm: 1, threePm: 0, game1: 1, game2: 1, game3: 1, shotPercentage: 0.125 },
-    { name: "Ben", points: 12, assists: 1, steals: 1, fg: 48, twoPm: 1, threePm: 1, game1: 3, game2: 3, game3: 6, shotPercentage: 0.208 },
-    { name: "Vince", points: 9, assists: 3, steals: 1, fg: 1, twoPm: 2, threePm: 1, game1: 3, game2: 5, game3: 1, shotPercentage: 0.166 },
-    { name: "Lance", points: 5, assists: 4, steals: 1, fg: 24, twoPm: 2, threePm: 0, game1: 1, game2: 3, game3: 1, shotPercentage: 0.208 },
+    { name: "Kyle", points: 1, assists: 4, steals: 3, fg: 8, twoPm: 1, threePm: 0, game1: 0, game2: 0, game3: 1, shotPercentage: 0.125 },
+    { name: "Ben", points: 12, assists: 1, steals: 1, fg: 48, twoPm: 10, threePm: 1, game1: 3, game2: 3, game3: 6, shotPercentage: 0.208 },
+    { name: "Vince", points: 9, assists: 3, steals: 1, fg: 36, twoPm: 5, threePm: 1, game1: 3, game2: 5, game3: 1, shotPercentage: 0.166 },
+    { name: "Lance", points: 5, assists: 4, steals: 1, fg: 24, twoPm: 5, threePm: 0, game1: 1, game2: 3, game3: 1, shotPercentage: 0.208 },
     { name: "Martino", points: 2, assists: 1, steals: 0, fg: 13, twoPm: 4, threePm: 0, game1: 2, game2: 0, game3: 0, shotPercentage: 0.153 }
 ];
 
