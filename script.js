@@ -6,7 +6,7 @@ let playerData = [
     { name: "Ben", points: 12, assists: 1, steals: 1, fg: 48, twoPm: 10, threePm: 1, game1: 3, game2: 3, game3: 6, shotPercentage: 0.208 },
     { name: "Vince", points: 9, assists: 3, steals: 1, fg: 36, twoPm: 5, threePm: 1, game1: 3, game2: 5, game3: 1, shotPercentage: 0.166 },
     { name: "Lance", points: 5, assists: 4, steals: 1, fg: 24, twoPm: 5, threePm: 0, game1: 1, game2: 3, game3: 1, shotPercentage: 0.208 },
-    { name: "Martino", points: 2, assists: 1, steals: 0, fg: 13, twoPm: 4, threePm: 0, game1: 2, game2: 0, game3: 0, shotPercentage: 0.153 }
+    { name: "Martino", points: 2, assists: 3, steals: 0, fg: 13, twoPm: 4, threePm: 0, game1: 2, game2: 0, game3: 0, shotPercentage: 0.153 }
 ];
 
 let playerColors = new Map(); // Store player colors separately
